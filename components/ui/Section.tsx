@@ -2,6 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { motion, HTMLMotionProps } from "framer-motion";
+import React from "react";
 
 interface SectionProps extends HTMLMotionProps<"section"> {
     container?: boolean;
@@ -23,9 +24,9 @@ export default function Section({
             {...props}
         >
             {container ? (
-                <div className="container mx-auto px-4 md:px-6">{children}</div>
+                <div className="container mx-auto px-4 md:px-6">{children as React.ReactNode}</div>
             ) : (
-                children
+                <>{children as React.ReactNode}</>
             )}
         </motion.section>
     );
