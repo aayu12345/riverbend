@@ -1,11 +1,9 @@
 "use client";
 
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
-import { Button } from "@/components/ui/Button";
 import Image from "next/image";
-import { ArrowUpRight, Bed, Bath, Users } from "lucide-react";
+import { Button } from "@/components/ui/Button";
 import { motion } from "framer-motion";
+import { ArrowUpRight, Bed, Bath, Users } from "lucide-react";
 
 const properties = [
     {
@@ -34,35 +32,35 @@ const properties = [
     }
 ];
 
-export default function BookPage() {
+export default function Properties() {
     return (
-        <main className="min-h-screen bg-alabaster selection:bg-copper selection:text-white">
-            <Navbar />
+        <section id="properties" className="py-24 md:py-32 bg-white text-charcoal">
+            <div className="container mx-auto px-4 md:px-8">
 
-            <section className="pt-32 pb-24 md:pt-48 md:pb-32 container mx-auto px-4 md:px-8">
-                <div className="max-w-4xl mx-auto text-center mb-16">
+                {/* Header */}
+                <div className="text-center max-w-3xl mx-auto mb-20">
                     <span className="text-copper uppercase tracking-[0.2em] text-xs font-bold mb-6 block">
-                        Reserve Your Stay
+                        Our Collection
                     </span>
-                    <h1 className="font-serif text-5xl md:text-7xl text-charcoal mb-8">
-                        Choose Your <br /> <span className="italic text-copper">Sanctuary.</span>
-                    </h1>
-                    <p className="text-charcoal/70 text-lg font-light max-w-2xl mx-auto">
-                        Select one of our curated London properties below to view availability and book your stay via Airbnb.
-                    </p>
+                    <h2 className="font-serif text-4xl md:text-6xl text-charcoal leading-[1.1] mb-8">
+                        Curated London <br /> <span className="italic text-copper">Stays.</span>
+                    </h2>
+                    <div className="w-24 h-[1px] bg-charcoal/10 mx-auto" />
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto">
+                {/* Properties Grid */}
+                <div className="grid md:grid-cols-2 gap-12 lg:gap-20">
                     {properties.map((property, idx) => (
                         <motion.div
                             key={property.id}
-                            initial={{ opacity: 0, y: 20 }}
+                            initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: idx * 0.1 }}
+                            transition={{ duration: 0.8, delay: idx * 0.2 }}
                             viewport={{ once: true }}
-                            className="bg-white p-6 rounded-sm shadow-lg border border-charcoal/5 group hover:border-copper/30 transition-colors duration-300"
+                            className="group"
                         >
-                            <div className="relative aspect-[4/3] overflow-hidden rounded-sm mb-6 bg-alabaster">
+                            {/* Image Card */}
+                            <div className="relative aspect-[4/3] overflow-hidden rounded-sm mb-8 bg-alabaster">
                                 <Image
                                     src={property.image}
                                     alt={property.title}
@@ -74,12 +72,20 @@ export default function BookPage() {
                                 </div>
                             </div>
 
+                            {/* Content */}
                             <div className="space-y-6">
-                                <div>
-                                    <h3 className="font-serif text-2xl md:text-3xl mb-2">{property.title}</h3>
-                                    <p className="text-charcoal/60 text-sm font-light leading-relaxed">
-                                        {property.description}
-                                    </p>
+                                <div className="flex justify-between items-start">
+                                    <h3 className="font-serif text-2xl md:text-3xl max-w-xs leading-tight">
+                                        {property.title}
+                                    </h3>
+                                    <a
+                                        href={property.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center justify-center w-10 h-10 rounded-full border border-charcoal/20 text-charcoal hover:bg-charcoal hover:text-white transition-colors duration-300"
+                                    >
+                                        <ArrowUpRight className="w-4 h-4" />
+                                    </a>
                                 </div>
 
                                 <div className="flex gap-6 text-charcoal/60 text-sm border-y border-charcoal/10 py-4">
@@ -97,24 +103,21 @@ export default function BookPage() {
                                     </div>
                                 </div>
 
-                                <a
-                                    href={property.link}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="block"
-                                >
-                                    <Button className="w-full bg-copper text-white hover:bg-copper/90 py-6 text-xs uppercase tracking-widest flex items-center justify-center gap-2">
-                                        Check Availability on Airbnb
-                                        <ArrowUpRight className="w-4 h-4" />
+                                <p className="text-charcoal/70 font-light leading-relaxed">
+                                    {property.description}
+                                </p>
+
+                                <a href={property.link} target="_blank" rel="noopener noreferrer" className="block">
+                                    <Button variant="outline" className="w-full md:w-auto border-charcoal text-charcoal hover:bg-charcoal hover:text-white transition-colors">
+                                        View on Airbnb
                                     </Button>
                                 </a>
                             </div>
                         </motion.div>
                     ))}
                 </div>
-            </section>
 
-            <Footer />
-        </main>
+            </div>
+        </section>
     );
 }

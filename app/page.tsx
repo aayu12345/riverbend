@@ -1,5 +1,6 @@
 import Hero from "@/components/home/Hero";
 import Intro from "@/components/home/Intro";
+import Properties from "@/components/home/Properties";
 import Features from "@/components/home/Features";
 import Location from "@/components/home/Location";
 import GalleryScroller from "@/components/home/GalleryScroller";
@@ -12,6 +13,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Intro />
+      <Properties />
       <Features />
       <Location />
       <GalleryScroller />
