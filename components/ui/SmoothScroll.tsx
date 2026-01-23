@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import { ReactLenis } from "@studio-freight/react-lenis";
 
 export default function SmoothScroll({
@@ -9,7 +10,8 @@ export default function SmoothScroll({
 }) {
     return (
         <ReactLenis root options={{ lerp: 0.1, duration: 1.5, smoothWheel: true }}>
-            {children}
+            {/* Casting through unknown to any to force resolve React 19 typing conflicts */}
+            {children as unknown as any}
         </ReactLenis>
     );
 }
