@@ -6,13 +6,14 @@ import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/Button";
+import Image from "next/image";
 
 const navItems = [
     { label: "The Cabin", href: "/#cabin" },
     { label: "Properties", href: "/#properties" },
     { label: "Gallery", href: "/#gallery" },
     { label: "Location", href: "/#location" },
-    { label: "Amenities", href: "/#amenities" },
+    { label: "Amenities", href: "/amenities" },
 ];
 
 export default function Navbar() {
@@ -32,52 +33,56 @@ export default function Navbar() {
             className={cn(
                 "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
                 scrolled
-                    ? "bg-alabaster/80 backdrop-blur-md py-4 border-b border-charcoal/5"
-                    : "bg-transparent py-8"
+                    ? "bg-alabaster/90 backdrop-blur-md py-4 border-b border-charcoal/5 shadow-sm"
+                    : "bg-transparent py-2"
             )}
         >
-            <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-                <Link href="/" className="z-50 relative">
-                    <h1
-                        className={cn(
-                            "font-serif text-2xl md:text-3xl font-bold tracking-tight transition-colors",
-                            scrolled ? "text-charcoal" : "text-alabaster"
-                        )}
-                    >
-                        Riverbend<span className="text-copper">.</span>
-                    </h1>
+            <div className="container mx-auto px-4 md:px-6 flex items-center justify-between overflow-visible" style={{ pointerEvents: 'auto' }}>
+                {/* Logo */}
+                <Link href="/" className="flex items-center cursor-pointer flex-shrink-0 overflow-visible -ml-4 sm:-ml-4 md:-ml-10">
+                    <div className="relative h-7 sm:h-9 w-[280px] sm:w-[320px] md:w-[350px] overflow-visible">
+                        <Image
+                            src="/images/cogansplacelogo.png"
+                            alt="Cogan's Place"
+                            fill
+                            priority
+                            className={cn(
+                                "object-contain object-left mt-2 transition-all duration-500",
+                                !scrolled
+                                    ? "drop-shadow-[0_0_25px_rgba(255,255,255,1)]" // Stronger glow for unscrolled
+                                    : "drop-shadow-[0_0_15px_rgba(255,255,255,0.9)]" // Stronger glow for scrolled
+                            )}
+                            style={{ transform: "scale(4.5)", transformOrigin: "left center" }}
+                            sizes="(max-width: 640px) 280px, (max-width: 768px) 320px, 350px"
+                        />
+                    </div>
                 </Link>
 
                 {/* Desktop Nav */}
-                <nav className="hidden md:flex items-center gap-8">
+                <nav className="hidden md:flex items-center gap-8 ml-auto relative z-20">
                     {navItems.map((item) => (
                         <Link
                             key={item.label}
                             href={item.href}
                             className={cn(
-                                "text-sm font-medium tracking-widest uppercase hover:text-copper transition-colors",
-                                scrolled ? "text-charcoal" : "text-alabaster/90"
+                                "relative text-xs font-bold tracking-widest uppercase transition-colors whitespace-nowrap",
+                                scrolled ? "text-charcoal hover:text-copper" : "text-alabaster hover:text-white"
                             )}
                         >
                             {item.label}
                         </Link>
                     ))}
-                    <Link href="/book">
-                        <Button
-                            size="sm"
-                            variant={scrolled ? "primary" : "outline"}
-                            className={cn(
-                                !scrolled && "border-alabaster text-alabaster hover:bg-alabaster hover:text-charcoal"
-                            )}
-                        >
-                            Book Now
-                        </Button>
+                    <Link
+                        href="/properties"
+                        className="inline-flex items-center justify-center rounded-sm font-medium transition-colors duration-300 uppercase tracking-widest bg-copper text-white hover:bg-copper/90 h-10 px-6 text-[10px]"
+                    >
+                        Book Now
                     </Link>
                 </nav>
 
                 {/* Mobile Toggle */}
                 <button
-                    className="md:hidden z-50 text-current"
+                    className="md:hidden z-50 text-current relative"
                     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 >
                     {mobileMenuOpen ? (
@@ -106,10 +111,12 @@ export default function Navbar() {
                                     {item.label}
                                 </Link>
                             ))}
-                            <Link href="/book" onClick={() => setMobileMenuOpen(false)}>
-                                <Button className="mt-4">
-                                    Book Your Stay
-                                </Button>
+                            <Link
+                                href="/properties"
+                                onClick={() => setMobileMenuOpen(false)}
+                                className="inline-flex items-center justify-center rounded-sm font-medium transition-colors duration-300 uppercase tracking-widest bg-charcoal text-alabaster border border-charcoal hover:bg-transparent hover:text-charcoal h-12 px-8 text-base mt-4"
+                            >
+                                Book Your Stay
                             </Link>
                         </nav>
                     </motion.div>

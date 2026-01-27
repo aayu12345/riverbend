@@ -12,9 +12,8 @@ export default function Home() {
     <main className="min-h-screen selection:bg-copper selection:text-white">
       <Navbar />
       <Hero />
-      <Intro />
       <Properties />
-      <Features />
+      <Intro />
       <Location />
       <GalleryScroller />
       <Footer />

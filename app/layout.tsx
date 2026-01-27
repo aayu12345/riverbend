@@ -16,7 +16,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Riverbend A-Frame | Modern Luxury Cabin",
+  title: "Cogan's Place | Modern Luxury Cabin",
   description: "Experience the quiet of the woods in modern luxury.",
 };
 

@@ -1,54 +1,62 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "@/components/ui/Button";
+import { MapPin } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Location() {
-    const targetRef = useRef(null);
-    const { scrollYProgress } = useScroll({
-        target: targetRef,
-        offset: ["start end", "end start"]
-    });
-
-    const x = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
-
     return (
-        <section id="location" ref={targetRef} className="py-24 md:py-32 bg-alabaster relative overflow-hidden">
+        <section id="location" className="py-24 bg-alabaster border-t border-charcoal/5">
+            <div className="container mx-auto px-4 md:px-8">
+                <div className="grid md:grid-cols-2 gap-12 lg:gap-24 items-center">
 
-            {/* Parallax Background Text */}
-            <div className="absolute top-1/2 -translate-y-1/2 left-0 w-full overflow-hidden pointer-events-none select-none opacity-5">
-                <motion.div style={{ x }} className="whitespace-nowrap">
-                    <span className="text-[20vw] font-serif font-bold uppercase leading-none">
-                        Location Location Location Location
-                    </span>
-                </motion.div>
-            </div>
-
-            <div className="container mx-auto px-4 md:px-8 relative z-10">
-                <div className="flex flex-col md:flex-row items-center justify-end">
-
-                    {/* Floating Content Card */}
+                    {/* Content */}
                     <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
+                        initial={{ opacity: 0, x: -30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
-                        className="bg-white p-12 md:p-16 max-w-xl shadow-2xl border border-charcoal/5"
                     >
                         <span className="text-copper uppercase tracking-[0.2em] text-xs font-bold mb-6 block">
-                            The Setting
+                            Our Location
                         </span>
-                        <h2 className="font-serif text-4xl md:text-5xl text-charcoal leading-[1.1] mb-8">
-                            Hidden in <br /> Plain Sight.
+                        <h2 className="font-serif text-4xl md:text-5xl text-charcoal leading-none mb-8">
+                            In the Heart of <br /> <span className="italic text-copper">London.</span>
                         </h2>
-                        <div className="w-16 h-[2px] bg-charcoal/10 mb-8" />
-                        <p className="text-charcoal/70 text-lg leading-relaxed font-light mb-10">
-                            Located just minutes from downtown Fennville and Saugatuck, yet completely secluded in nature. The best of both worlds awaits.
-                        </p>
-                        <Button className="bg-charcoal text-white hover:bg-copper transition-colors w-full md:w-auto">
-                            Explore the Area
+                        <div className="space-y-6 text-charcoal/70 font-light leading-relaxed mb-10">
+                            <p>
+                                Perfectly positioned for both business and leisure, our apartments offer the ideal base to explore the capital.
+                            </p>
+                            <div className="flex items-start gap-4">
+                                <MapPin className="text-copper w-5 h-5 flex-shrink-0 mt-1" />
+                                <div>
+                                    <strong className="block text-charcoal font-medium mb-1">Cogan's Place</strong>
+                                    <span className="block">123 Riverbend Avenue</span>
+                                    <span className="block">London, SW1A 1AA</span>
+                                </div>
+                            </div>
+                        </div>
+                        <Button variant="outline" className="border-charcoal text-charcoal hover:bg-charcoal hover:text-white rounded-none uppercase tracking-widest text-xs px-8">
+                            Get Directions
                         </Button>
+                    </motion.div>
+
+                    {/* Map Placeholder */}
+                    <motion.div
+                        initial={{ opacity: 0, x: 30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
+                        viewport={{ once: true }}
+                        className="relative h-[400px] w-full bg-charcoal/5 rounded-sm overflow-hidden flex items-center justify-center group"
+                    >
+                        {/* This would be an interactive map in production */}
+                        <div className="absolute inset-0 grayscale opacity-40 bg-[url('https://maps.googleapis.com/maps/api/staticmap?center=London&zoom=13&size=600x400&sensor=false')] bg-cover bg-center" />
+                        <div className="relative z-10 w-12 h-12 bg-copper text-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            <MapPin className="w-6 h-6" />
+                        </div>
+                        <div className="absolute bottom-4 left-4 bg-white/90 px-4 py-2 text-xs font-bold text-charcoal uppercase tracking-widest shadow-sm">
+                            View on Google Maps
+                        </div>
                     </motion.div>
 
                 </div>

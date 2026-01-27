@@ -1,68 +1,63 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Button } from "@/components/ui/Button";
-import Image from "next/image";
-import Link from "next/link";
+import { useRef } from "react";
+import BookingWidget from "@/components/ui/BookingWidget";
 
 export default function Hero() {
-    const { scrollY } = useScroll();
-    const y = useTransform(scrollY, [0, 500], [0, 200]);
+    const ref = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: ref,
+        offset: ["start start", "end start"],
+    });
+
+    const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+    const textY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
 
     return (
-        <section className="relative h-screen w-full overflow-hidden flex items-center justify-center">
-            {/* Background Parallax */}
-            <motion.div style={{ y }} className="absolute inset-0 z-0">
-                <Image
-                    src="/images/hero.png"
-                    alt="Riverbend Cabin Exterior"
-                    fill
-                    priority
-                    className="object-cover"
-                    quality={100}
-                />
-                <div className="absolute inset-0 bg-black/30 backdrop-blur-[1px]" />
-                <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/60 to-transparent" />
+        <section ref={ref} className="relative h-screen min-h-[800px] flex items-center justify-center overflow-hidden">
+            {/* Background Image with Fixed Parallax feel */}
+            <motion.div
+                style={{ y: backgroundY }}
+                className="absolute inset-0 z-0"
+            >
+                <div
+                    className="absolute inset-0 bg-cover bg-center bg-no-repeat w-full h-[120%]"
+                    style={{ backgroundImage: "url('/images/hero_london_victorian.png')" }}
+                >
+                    {/* Overlay for text readability */}
+                    <div className="absolute inset-0 bg-black/40" />
+                    <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/80 to-transparent" />
+                </div>
             </motion.div>
 
             {/* Content */}
-            <div className="relative z-10 container mx-auto px-4 text-center text-alabaster pt-32 md:pt-0">
+            <motion.div
+                style={{ y: textY }}
+                className="relative z-10 container mx-auto px-4 md:px-6 text-center md:text-left h-full flex flex-col justify-center pb-20"
+            >
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1, delay: 0.2 }}
+                    transition={{ duration: 0.8 }}
+                    className="max-w-4xl"
                 >
-                    <span className="inline-block text-xs md:text-sm uppercase tracking-[0.3em] mb-4 md:mb-6 text-alabaster/80 font-medium">
-                        Welcome to Riverbend
+                    <span className="text-white/90 uppercase tracking-[0.2em] text-xs font-bold mb-6 block border-l-2 border-copper pl-4">
+                        Welcome to Cogan's Place
                     </span>
-                    <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl mb-8 leading-[1.1] tracking-wide">
-                        YOUR RIVERSIDE GETAWAY <br />
-                        <span className="italic font-light text-copper">STARTS HERE</span>
+                    <h1 className="font-serif text-5xl md:text-7xl lg:text-[5rem] leading-none text-white mb-6">
+                        Timeless Victorian <br /> <span className="italic font-light text-copper">Elegance.</span>
                     </h1>
-
-                    <div className="flex flex-col md:flex-row gap-6 justify-center items-center mt-12">
-                        <Link href="/book">
-                            <Button
-                                size="lg"
-                                className="bg-copper text-white border-none hover:bg-copper/90 px-8 py-6 text-xs uppercase tracking-widest"
-                            >
-                                Book Now
-                            </Button>
-                        </Link>
-                    </div>
+                    <p className="text-white/80 text-lg md:text-xl font-light max-w-xl leading-relaxed mb-8 md:pl-1">
+                        Experience the charm of heritage living in the heart of London's most exclusive neighborhoods.
+                    </p>
                 </motion.div>
-            </div>
-
-            {/* Scroll indicator */}
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1.5, duration: 1 }}
-                className="absolute bottom-10 left-1/2 -translate-x-1/2 text-alabaster flex flex-col items-center gap-2"
-            >
-                <span className="text-[10px] uppercase tracking-widest">Explore</span>
-                <div className="w-[1px] h-12 bg-gradient-to-b from-alabaster to-transparent" />
             </motion.div>
+
+            {/* Booking Widget Strip */}
+            <div className="absolute bottom-0 left-0 right-0 z-20 px-4 pb-8 md:pb-12">
+                <BookingWidget />
+            </div>
         </section>
     );
 }

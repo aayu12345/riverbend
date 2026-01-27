@@ -17,7 +17,7 @@ export default function GalleryScroller() {
     const x = useTransform(scrollYProgress, [0, 1], ["0%", "-85%"]);
 
     return (
-        <section id="gallery" ref={targetRef} className="relative h-[300vh] bg-transparent">
+        <section id="gallery" ref={targetRef} className="relative h-[300vh] bg-alabaster">
             <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
                 <div className="container mx-auto px-6 mb-12 flex justify-between items-end">
                     <div>
