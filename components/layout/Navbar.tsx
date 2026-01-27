@@ -39,21 +39,20 @@ export default function Navbar() {
         >
             <div className="container mx-auto px-4 md:px-6 flex items-center justify-between overflow-visible" style={{ pointerEvents: 'auto' }}>
                 {/* Logo */}
-                <Link href="/" className="flex items-center cursor-pointer flex-shrink-0 overflow-visible -ml-4 sm:-ml-4 md:-ml-10">
-                    <div className="relative h-7 sm:h-9 w-[280px] sm:w-[320px] md:w-[350px] overflow-visible">
+                <Link href="/" className="flex items-center cursor-pointer flex-shrink-0 overflow-visible ml-0 md:-ml-10">
+                    <div className="relative h-7 sm:h-9 w-[120px] sm:w-[280px] md:w-[350px] overflow-visible">
                         <Image
                             src="/images/cogansplacelogo.png"
                             alt="Cogan's Place"
                             fill
                             priority
                             className={cn(
-                                "object-contain object-left mt-2 transition-all duration-500",
+                                "object-contain object-left mt-2 transition-all duration-500 origin-left scale-[2.5] md:scale-[4.5]",
                                 !scrolled
                                     ? "drop-shadow-[0_0_25px_rgba(255,255,255,1)]" // Stronger glow for unscrolled
                                     : "drop-shadow-[0_0_15px_rgba(255,255,255,0.9)]" // Stronger glow for scrolled
                             )}
-                            style={{ transform: "scale(4.5)", transformOrigin: "left center" }}
-                            sizes="(max-width: 640px) 280px, (max-width: 768px) 320px, 350px"
+                            sizes="(max-width: 640px) 140px, (max-width: 768px) 280px, 350px"
                         />
                     </div>
                 </Link>
