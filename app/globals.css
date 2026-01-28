@@ -4,17 +4,20 @@
   --font-sans: var(--font-sans);
   --font-serif: var(--font-serif);
 
-  /* Cogan's Place Palette "Midnight Slate" */
-  --color-alabaster: #EBE4D4;
-  /* Warm Vintage Cream (User Request) */
-  --color-forest: #1C1917;
-  /* Deep Warm Black/Slate */
+  /* Cogan's Place Palette "Midnight Navy & Gold" */
+  --color-alabaster: #F9F8F6;
+  /* Crisp Off-White */
+  --color-forest: #0F172A;
+  /* Deep Navy */
+  --color-wilde-green: #0F172A;
+  /* Rebrand to Navy (keeping var name for now to avoid break) */
   --color-charcoal: #0F172A;
-  /* Midnight Navy/Slate */
+  /* Midnight Navy */
   --color-earth: #78716C;
   /* Warm Grey */
   --color-copper: #C5A087;
-  /* Muted Bronze (Luxury Accent) */
+  /* Classic Copper/Bronze Accent */
+  --color-copper-accent: #C5A087;
 }
 
 /* Custom utilities */
