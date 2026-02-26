@@ -9,11 +9,15 @@ export default function Footer() {
         <footer className="bg-[#0F172A] text-[#F9F8F6] pt-20 pb-10 text-sm">
             <div className="container mx-auto px-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20 border-b border-[#F9F8F6]/10 pb-12">
-                    {/* Service Column */}
+                    {/* Contact & Service Column */}
                     <div className="space-y-6">
+                        <h3 className="font-serif italic text-lg mb-4">Contact Us</h3>
+                        <div className="flex flex-col gap-2 font-light text-[#F9F8F6]/80 mb-6">
+                            <p>+44 7939 200486</p>
+                            <p>stevecogan5@gmail.com</p>
+                        </div>
                         <h3 className="font-serif italic text-lg mb-4">Service</h3>
                         <nav className="flex flex-col gap-3 opacity-80">
-                            <Link href="#" className="hover:text-white transition-colors">Contact us</Link>
                             <Link href="#" className="hover:text-white transition-colors">FAQ</Link>
                             <Link href="#" className="hover:text-white transition-colors">Offers</Link>
                             <Link href="#" className="hover:text-white transition-colors">Locations</Link>

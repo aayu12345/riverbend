@@ -8,6 +8,9 @@ import Footer from "@/components/layout/Footer";
 import HomeAmenities from "@/components/home/HomeAmenities";
 import StayYourWay from "@/components/home/StayYourWay";
 import Reviews from "@/components/home/Reviews";
+import ThingsToDo from "@/components/home/ThingsToDo";
+import MeetYourHost from "@/components/home/MeetYourHost";
+import ArmingerRoad from "@/components/home/ArmingerRoad";
 
 export default function Home() {
   return (
@@ -20,7 +23,10 @@ export default function Home() {
       <Properties />
       <HomeAmenities />
       <Reviews />
+      <MeetYourHost />
       <Location />
+      <ThingsToDo />
+      <ArmingerRoad />
       <Footer />
     </main>
   );
