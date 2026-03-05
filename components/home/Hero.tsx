@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/Button";
 
 export default function Hero() {
     return (
-        <section className="relative min-h-screen flex flex-col md:flex-row pt-20 overflow-hidden bg-[#F9F8F6]">
+        <section className="relative min-h-screen flex flex-col md:flex-row pt-28 overflow-hidden bg-[#F9F8F6]">
             {/* Left Content */}
             <div className="w-full md:w-1/2 flex flex-col justify-center px-8 md:px-16 lg:px-24 py-12 md:py-0 relative z-10">
                 <motion.div

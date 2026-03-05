@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+/* Offset anchor scroll targets so fixed navbar doesn't cover them */
+html {
+  scroll-padding-top: 88px; /* matches navbar height (py-6 + logo) */
+}
+
+
 @theme {
   --font-sans: var(--font-sans);
   --font-serif: var(--font-serif);
