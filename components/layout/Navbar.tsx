@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/Button";
@@ -18,16 +17,8 @@ const navItems = [
 ];
 
 export default function Navbar() {
-    const [scrolled, setScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setScrolled(window.scrollY > 20);
-        };
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
 
     // Lock body scroll when menu is open
     useEffect(() => {
@@ -43,12 +34,7 @@ export default function Navbar() {
 
     return (
         <header
-            className={cn(
-                "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-                scrolled
-                    ? "bg-[#F9F8F6] py-6 border-b border-[#0F172A]/10 shadow-sm"
-                    : "bg-transparent py-9"
-            )}
+            className="fixed top-0 left-0 right-0 z-50 bg-[#F9F8F6] py-6 border-b border-[#0F172A]/10 shadow-sm"
         >
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 flex justify-between items-center h-full overflow-visible relative" style={{ pointerEvents: 'auto' }}>
                 {/* Logo - Text/Image Hybrid with Scale */}

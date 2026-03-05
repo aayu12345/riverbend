@@ -101,18 +101,34 @@ export default function PropertyDetailFF() {
         <main className="min-h-screen bg-[#F9F8F6]">
             <Navbar />
 
-            {/* Hero Photo Grid */}
-            <section className="pt-20">
-                <div className="grid grid-cols-4 grid-rows-2 gap-2 h-[50vh] md:h-[70vh]">
+            {/* Hero Photo Grid - responsive */}
+            <div className="pt-20">
+                {/* Mobile layout */}
+                <div className="md:hidden flex flex-col gap-1">
+                    <div className="relative h-[55vw] min-h-[220px] cursor-pointer overflow-hidden" onClick={() => openLightbox(0)}>
+                        <Image src={allPhotos[0]} alt="Main photo" fill className="object-cover" sizes="100vw" />
+                    </div>
+                    <div className="grid grid-cols-2 gap-1">
+                        {allPhotos.slice(1, 3).map((photo, idx) => (
+                            <div key={idx} className="relative aspect-[4/3] cursor-pointer overflow-hidden" onClick={() => openLightbox(idx + 1)}>
+                                <Image src={photo} alt={`Photo ${idx + 2}`} fill className="object-cover" sizes="50vw" />
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Desktop layout */}
+                <div className="hidden md:grid grid-cols-4 grid-rows-2 gap-2 h-[70vh]">
                     <div className="col-span-2 row-span-2 relative cursor-pointer overflow-hidden" onClick={() => openLightbox(0)}>
-                        <Image src={allPhotos[0]} alt="Luxury London 3BR main" fill className="object-cover hover:scale-105 transition-transform duration-700" />
+                        <Image src={allPhotos[0]} alt="Luxury London 3BR main" fill className="object-cover hover:scale-105 transition-transform duration-700" sizes="50vw" />
                     </div>
                     {allPhotos.slice(1, 5).map((photo, idx) => (
                         <div key={idx} className="relative cursor-pointer overflow-hidden" onClick={() => openLightbox(idx + 1)}>
-                            <Image src={photo} alt={`Interior ${idx + 2}`} fill className="object-cover hover:scale-105 transition-transform duration-700" />
+                            <Image src={photo} alt={`Interior ${idx + 2}`} fill className="object-cover hover:scale-105 transition-transform duration-700" sizes="25vw" />
                         </div>
                     ))}
                 </div>
+
                 <div className="container mx-auto px-4 md:px-8 mt-3 flex justify-end">
                     <button
                         onClick={handleShowAllPhotos}
@@ -121,7 +137,7 @@ export default function PropertyDetailFF() {
                         Show All {allPhotos.length} Photos
                     </button>
                 </div>
-            </section>
+            </div>
 
             {/* Main Content */}
             <section className="container mx-auto px-4 md:px-8 py-14">
