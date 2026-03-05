@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 export default function MeetYourHost() {
     return (
@@ -9,23 +8,19 @@ export default function MeetYourHost() {
             <div className="container mx-auto px-4 md:px-8">
                 <div className="flex flex-col md:flex-row items-center gap-12 lg:gap-24 max-w-6xl mx-auto">
 
-                    {/* Image Column */}
+                    {/* Image Column — replace the div below with an <Image> when Steve's photo is ready */}
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
-                        className="w-full md:w-5/12 relative aspect-[3/4] rounded-sm overflow-hidden bg-charcoal/5"
+                        className="w-full md:w-5/12 relative aspect-[3/4] rounded-sm overflow-hidden bg-charcoal/5 flex flex-col items-center justify-center gap-6"
                     >
-                        {/* Temporary placeholder image from Unsplash. The client can replace this with an actual photo later */}
-                        <Image
-                            src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=800"
-                            alt="Steve Cogan - Your Host"
-                            fill
-                            className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
-                            sizes="(max-width: 768px) 100vw, 50vw"
-                        />
-                        <div className="absolute inset-0 bg-charcoal/10 mix-blend-overlay"></div>
+                        {/* Elegant initials placeholder until Steve's real photo is provided */}
+                        <div className="w-36 h-36 rounded-full border-2 border-charcoal/20 bg-charcoal/10 flex items-center justify-center">
+                            <span className="font-serif text-6xl text-charcoal/40 italic select-none">SC</span>
+                        </div>
+                        <p className="text-charcoal/35 text-xs uppercase tracking-[0.25em] font-medium">Photo Coming Soon</p>
                     </motion.div>
 
                     {/* Content Column */}
@@ -56,7 +51,6 @@ export default function MeetYourHost() {
                             </p>
                         </div>
 
-                        {/* Signature or visual accent could go here */}
                         <div className="mt-12 pt-8 border-t border-charcoal/10">
                             <p className="font-serif text-2xl text-charcoal italic">"The best stays come from feeling at home."</p>
                         </div>
@@ -67,4 +61,3 @@ export default function MeetYourHost() {
         </section>
     );
 }
-
