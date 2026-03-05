@@ -24,7 +24,6 @@ export default function MeetYourHost() {
                             fill
                             className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
                             sizes="(max-width: 768px) 100vw, 50vw"
-                            unoptimized
                         />
                         <div className="absolute inset-0 bg-charcoal/10 mix-blend-overlay"></div>
                     </motion.div>
@@ -68,3 +67,4 @@ export default function MeetYourHost() {
         </section>
     );
 }
+

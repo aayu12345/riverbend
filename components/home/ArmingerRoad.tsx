@@ -190,7 +190,6 @@ export default function ArmingerRoad() {
                                     alt={photo.caption}
                                     fill
                                     className="object-cover transition-transform duration-700 group-hover:scale-105"
-                                    unoptimized
                                 />
                                 {/* Gradient overlay with caption */}
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/60 via-transparent to-transparent" />
@@ -232,3 +231,4 @@ export default function ArmingerRoad() {
         </section>
     );
 }
+

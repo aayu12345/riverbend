@@ -84,12 +84,12 @@ export default function PropertyDetail() {
                         className="col-span-2 row-span-2 relative cursor-pointer overflow-hidden"
                         onClick={() => openLightbox(0)}
                     >
-                        <Image src={allPhotos[0]} alt="Shepherd's Bush flat main" fill className="object-cover hover:scale-105 transition-transform duration-700" unoptimized />
+                        <Image src={allPhotos[0]} alt="Shepherd's Bush flat main" fill className="object-cover hover:scale-105 transition-transform duration-700" />
                     </div>
                     {/* 4 smaller photos */}
                     {allPhotos.slice(1, 5).map((photo, idx) => (
                         <div key={idx} className="relative cursor-pointer overflow-hidden" onClick={() => openLightbox(idx + 1)}>
-                            <Image src={photo} alt={`Interior ${idx + 2}`} fill className="object-cover hover:scale-105 transition-transform duration-700" unoptimized />
+                            <Image src={photo} alt={`Interior ${idx + 2}`} fill className="object-cover hover:scale-105 transition-transform duration-700" />
                         </div>
                     ))}
                 </div>
@@ -291,7 +291,7 @@ export default function PropertyDetail() {
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                         {allPhotos.map((photo, idx) => (
                             <div key={idx} className="relative aspect-[4/3] cursor-pointer overflow-hidden" onClick={() => openLightbox(idx)}>
-                                <Image src={photo} alt={`Photo ${idx + 1}`} fill className="object-cover hover:scale-105 transition-transform duration-500" unoptimized />
+                                <Image src={photo} alt={`Photo ${idx + 1}`} fill className="object-cover hover:scale-105 transition-transform duration-500" />
                             </div>
                         ))}
                     </div>
@@ -317,7 +317,7 @@ export default function PropertyDetail() {
                             <ChevronLeft className="w-10 h-10" />
                         </button>
                         <div className="relative w-full max-w-5xl h-[80vh] mx-16" onClick={e => e.stopPropagation()}>
-                            <Image src={allPhotos[lightboxIndex]} alt={`Photo ${lightboxIndex + 1}`} fill className="object-contain" unoptimized />
+                            <Image src={allPhotos[lightboxIndex]} alt={`Photo ${lightboxIndex + 1}`} fill className="object-contain" />
                         </div>
                         <button onClick={(e) => { e.stopPropagation(); nextPhoto(); }} className="absolute right-4 md:right-8 text-white/70 hover:text-white">
                             <ChevronRight className="w-10 h-10" />
@@ -331,3 +331,4 @@ export default function PropertyDetail() {
         </main>
     );
 }
+
