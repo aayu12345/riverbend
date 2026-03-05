@@ -46,7 +46,7 @@ export default function Navbar() {
             className={cn(
                 "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
                 scrolled
-                    ? "bg-[#F9F8F6]/95 backdrop-blur-sm py-6 border-b border-[#0F172A]/5"
+                    ? "bg-[#F9F8F6] py-6 border-b border-[#0F172A]/10 shadow-sm"
                     : "bg-transparent py-9"
             )}
         >
@@ -102,9 +102,10 @@ export default function Navbar() {
                 <AnimatePresence>
                     {mobileMenuOpen && (
                         <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
+                            initial={{ opacity: 0, y: -8 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -8 }}
+                            transition={{ duration: 0.15, ease: "easeOut" }}
                             className="fixed inset-0 bg-[#F9F8F6] z-[60] overflow-y-auto"
                         >
                             <div className="h-full flex flex-col pt-24 px-6 pb-6 justify-start">

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ShoppingBag, TreePine, Music, TrainFront, UtensilsCrossed, Heart } from "lucide-react";
+import Image from "next/image";
 
 export default function ArmingerRoad() {
     return (
@@ -150,6 +151,56 @@ export default function ArmingerRoad() {
                         </div>
                     </motion.div>
                 </div>
+
+                {/* Drone Photo Gallery — Aerial Views Near Westfield */}
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                    viewport={{ once: true }}
+                    className="mt-24"
+                >
+                    <div className="text-center mb-10">
+                        <span className="text-[#C5A087] uppercase tracking-[0.2em] text-xs font-bold mb-3 block">Aerial Views</span>
+                        <h3 className="font-serif text-3xl md:text-4xl text-[#0F172A]">
+                            Steps From <span className="italic text-[#C5A087]">Westfield London</span>
+                        </h3>
+                        <p className="text-[#0F172A]/60 font-light mt-4 max-w-xl mx-auto">
+                            Our apartments sit right in the heart of this world-famous neighbourhood — Europe's landmark shopping, dining, and lifestyle destination on your doorstep.
+                        </p>
+                    </div>
+
+                    {/* Full-width 3-panel drone grid */}
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-2 -mx-4 md:-mx-8 lg:-mx-16">
+                        {[
+                            { src: "/images/drone/DJI_20260214102637_0531_D.jpg", caption: "Westfield & Shepherd's Bush" },
+                            { src: "/images/drone/DJI_20260214102745_0532_D.jpg", caption: "West London Skyline" },
+                            { src: "/images/drone/DJI_20260214102834_0533_D.jpg", caption: "The Neighbourhood" },
+                        ].map((photo, i) => (
+                            <motion.div
+                                key={i}
+                                initial={{ opacity: 0, scale: 0.98 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 0.6, delay: i * 0.15 }}
+                                viewport={{ once: true }}
+                                className="relative aspect-[4/3] overflow-hidden group"
+                            >
+                                <Image
+                                    src={photo.src}
+                                    alt={photo.caption}
+                                    fill
+                                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                                    unoptimized
+                                />
+                                {/* Gradient overlay with caption */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/60 via-transparent to-transparent" />
+                                <span className="absolute bottom-4 left-4 text-white text-xs uppercase tracking-widest font-medium opacity-90">
+                                    {photo.caption}
+                                </span>
+                            </motion.div>
+                        ))}
+                    </div>
+                </motion.div>
 
                 {/* Final Wrap-up Box */}
                 <motion.div

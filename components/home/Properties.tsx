@@ -6,48 +6,37 @@ import { motion } from "framer-motion";
 import { ArrowUpRight, Bed, Bath, Users } from "lucide-react";
 import Link from "next/link";
 
-const properties = [
-    {
-        id: "shepherds-bush",
-        title: "Shepherd’s Bush 4BR Family Flat",
-        location: "Shepherd's Bush, London",
-        price: "From £350",
-        description: "A spacious and stylish 4-bedroom apartment located near Westfield. Perfect for large families seeking a modern base.",
-        stats: { guests: 8, bedrooms: 4, baths: 2 },
-        image: "/images/living.png",
-        link: "https://www.airbnb.com/rooms/978967068931628151"
-    },
-    {
-        id: "central-london",
-        title: "Central London 3BR Urban Retreat",
-        location: "Zone 1, Central London",
-        price: "From £295",
-        description: "A stylish and modern flat designed for families and business travelers. Steps away from rail links.",
-        stats: { guests: 6, bedrooms: 3, baths: 1.5 },
-        image: "/images/bedroom.png",
-        link: "https://www.airbnb.com/rooms/1158514301371753415"
-    },
-    {
-        id: "kensington-mews",
-        title: "Historic Kensington Mews House",
-        location: "Kensington, London",
-        price: "From £450",
-        description: "Experience true London heritage in this charming cobbled mews house. Features a private garage and sunlit terrace.",
-        stats: { guests: 5, bedrooms: 3, baths: 2 },
-        image: "/images/hero_london_victorian.png", // Reusing hero for variety
-        link: "#"
-    },
-    {
-        id: "notting-hill",
-        title: "Notting Hill Garden Studio",
-        location: "Notting Hill, London",
-        price: "From £180",
-        description: "A romantic hideaway for couples. Compact, chic, and featuring direct access to a private communal garden square.",
-        stats: { guests: 2, bedrooms: 1, baths: 1 },
-        image: "/images/sauna.png", // Using existing placeholder
-        link: "#"
-    }
-];
+const properties: {
+    id: string;
+    title: string;
+    location: string;
+    price: string;
+    description: string;
+    stats: { guests: number; bedrooms: number; baths: number };
+    image: string;
+    link: string;
+}[] = [
+        {
+            id: "shepherds-bush-4br",
+            title: "Shepherd's Bush 4BR Flat · Sleeps 8",
+            location: "Shepherd's Bush, London",
+            price: "Contact for pricing",
+            description: "Spacious 4-bedroom apartment near Westfield. Perfect for families and groups. Bright, modern, with excellent transport links to Central London.",
+            stats: { guests: 8, bedrooms: 4, baths: 2 },
+            image: "/images/gf/DSC01022.jpg",
+            link: "/properties/shepherds-bush-4br"
+        },
+        {
+            id: "london-3br",
+            title: "Luxury London 3BR Flat Near Tube",
+            location: "Shepherd's Bush, London",
+            price: "Contact for pricing",
+            description: "Bright, stylish London retreat just moments from the Tube. Comfortable beds, fast Wi-Fi, fully equipped kitchen and excellent transport links.",
+            stats: { guests: 6, bedrooms: 3, baths: 1 },
+            image: "/images/ff/DSC01133.jpg",
+            link: "/properties/london-3br"
+        }
+    ];
 
 export default function Properties() {
     return (
@@ -123,9 +112,9 @@ export default function Properties() {
                                     </div>
                                 </div>
 
-                                <a href={property.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-xs font-bold uppercase tracking-widest text-charcoal hover:text-copper transition-colors gap-2">
+                                <Link href={property.link} className="inline-flex items-center text-xs font-bold uppercase tracking-widest text-charcoal hover:text-copper transition-colors gap-2">
                                     View Details <ArrowUpRight className="w-3 h-3" />
-                                </a>
+                                </Link>
                             </div>
                         </motion.div>
                     ))}
