@@ -3,7 +3,7 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
     Users, Bed, Bath, Wifi, Utensils, Tv, Shirt,
@@ -67,8 +67,16 @@ export default function PropertyDetailFF() {
     const [lightboxOpen, setLightboxOpen] = useState(false);
     const [lightboxIndex, setLightboxIndex] = useState(0);
     const [showAllPhotos, setShowAllPhotos] = useState(false);
+    const allPhotosRef = useRef<HTMLDivElement>(null);
     const [formData, setFormData] = useState({ name: "", email: "", checkin: "", checkout: "", guests: "1", message: "" });
     const [submitted, setSubmitted] = useState(false);
+
+    const handleShowAllPhotos = () => {
+        setShowAllPhotos(true);
+        setTimeout(() => {
+            allPhotosRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 50);
+    };
 
     const openLightbox = (idx: number) => { setLightboxIndex(idx); setLightboxOpen(true); };
     const closeLightbox = () => setLightboxOpen(false);
@@ -107,7 +115,7 @@ export default function PropertyDetailFF() {
                 </div>
                 <div className="container mx-auto px-4 md:px-8 mt-3 flex justify-end">
                     <button
-                        onClick={() => setShowAllPhotos(true)}
+                        onClick={handleShowAllPhotos}
                         className="bg-white border border-[#0F172A]/20 text-[#0F172A] text-xs uppercase tracking-widest font-bold px-6 py-3 hover:bg-[#0F172A] hover:text-white transition-colors duration-300 shadow-sm"
                     >
                         Show All {allPhotos.length} Photos
@@ -307,7 +315,7 @@ export default function PropertyDetailFF() {
 
             {/* All Photos Grid */}
             {showAllPhotos && (
-                <section className="container mx-auto px-4 md:px-8 pb-20">
+                <section ref={allPhotosRef} className="container mx-auto px-4 md:px-8 pb-20 pt-8">
                     <div className="flex items-center justify-between mb-8">
                         <h2 className="font-serif text-3xl text-[#0F172A]">All Photos</h2>
                         <button onClick={() => setShowAllPhotos(false)} className="text-[#0F172A]/50 hover:text-[#0F172A] text-xs uppercase tracking-widest flex items-center gap-2">
