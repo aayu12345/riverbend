@@ -41,13 +41,10 @@ export default function MeetYourHost() {
 
                         <div className="space-y-6 text-charcoal/80 font-light leading-relaxed text-lg">
                             <p>
-                                Steve is a Londoner born and bred, with a genuine love for the city and its neighbourhoods. Having lived in London all his life, he knows the area inside out and is always happy to share local tips — from where to eat and drink, to the easiest ways to get around and the spots worth making time for.
+                                Steve is a Londoner born and bred, with a genuine love for the city. Having lived here all his life, he knows the area inside out — from hidden culinary gems to the easiest ways to navigate the city.
                             </p>
                             <p>
-                                Steve works full-time in property and has been welcoming guests into his homes for over 20 years. He takes pride in running well-maintained, comfortable spaces and in being a responsive, reliable host. Whether guests are visiting for work, a short break, or a longer stay, he aims to make the experience straightforward, relaxed, and well looked after from start to finish.
-                            </p>
-                            <p>
-                                Easy-going and accommodating by nature, Steve believes the best stays come from feeling at home — with the reassurance that everything is being handled professionally in the background.
+                                With over 20 years of experience in property and hospitality, Steve takes pride in offering well-maintained, premium spaces. He believes the best stays come from feeling at home, with professional care handled seamlessly in the background.
                             </p>
                         </div>
 

@@ -28,7 +28,7 @@ export default function HomeAmenities() {
                             Apartment <br /> <span className="italic opacity-80">Amenities</span>
                         </h2>
                         <p className="text-[#0F172A]/80 leading-relaxed mb-8">
-                            Designed for living, not just sleeping. Our apartments come fully equipped with everything you need for a comfortable stay, whether for a night or a month.
+                            Spaces designed for living. Our apartments are fully equipped for ultimate comfort, whether for a quick city break or a long stay.
                         </p>
                     </motion.div>
 

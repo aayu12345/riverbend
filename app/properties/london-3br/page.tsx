@@ -12,19 +12,19 @@ import {
 } from "lucide-react";
 
 const allPhotos = [
-    "/images/ff/DSC01133.jpg", "/images/ff/DSC01136.jpg", "/images/ff/DSC01139.jpg",
-    "/images/ff/DSC01142.jpg", "/images/ff/DSC01145.jpg", "/images/ff/DSC01148.jpg",
-    "/images/ff/DSC01151.jpg", "/images/ff/DSC01154.jpg", "/images/ff/DSC01157.jpg",
-    "/images/ff/DSC01160.jpg", "/images/ff/DSC01163.jpg", "/images/ff/DSC01169.jpg",
-    "/images/ff/DSC01172.jpg", "/images/ff/DSC01175.jpg", "/images/ff/DSC01178.jpg",
-    "/images/ff/DSC01181.jpg", "/images/ff/DSC01184.jpg", "/images/ff/DSC01187.jpg",
-    "/images/ff/DSC01190.jpg", "/images/ff/DSC01193.jpg", "/images/ff/DSC01196.jpg",
-    "/images/ff/DSC01199.jpg", "/images/ff/DSC01202.jpg", "/images/ff/DSC01205.jpg",
-    "/images/ff/DSC01208.jpg", "/images/ff/DSC01211.jpg", "/images/ff/DSC01214.jpg",
-    "/images/ff/DSC01217.jpg", "/images/ff/DSC01220.jpg", "/images/ff/DSC01223.jpg",
-    "/images/ff/DSC01226.jpg", "/images/ff/DSC01229.jpg", "/images/ff/DSC01232.jpg",
-    "/images/ff/DSC01235.jpg", "/images/ff/DSC01238.jpg", "/images/ff/DSC01239.jpg",
-    "/images/ff/DSC01130.jpg",
+    "/images/gf/DSC01125.jpg", "/images/gf/DSC00995.jpg", "/images/gf/DSC00998.jpg",
+    "/images/gf/DSC01001.jpg", "/images/gf/DSC01004.jpg", "/images/gf/DSC01007.jpg",
+    "/images/gf/DSC01010.jpg", "/images/gf/DSC01013.jpg", "/images/gf/DSC01016.jpg",
+    "/images/gf/DSC01019.jpg", "/images/gf/DSC01022.jpg", "/images/gf/DSC01028.jpg",
+    "/images/gf/DSC01031.jpg", "/images/gf/DSC01034.jpg", "/images/gf/DSC01037.jpg",
+    "/images/gf/DSC01040.jpg", "/images/gf/DSC01043.jpg", "/images/gf/DSC01046.jpg",
+    "/images/gf/DSC01049.jpg", "/images/gf/DSC01052.jpg", "/images/gf/DSC01058.jpg",
+    "/images/gf/DSC01061.jpg", "/images/gf/DSC01064.jpg", "/images/gf/DSC01067.jpg",
+    "/images/gf/DSC01073.jpg", "/images/gf/DSC01074.jpg", "/images/gf/DSC01076.jpg",
+    "/images/gf/DSC01079.jpg", "/images/gf/DSC01085.jpg", "/images/gf/DSC01088.jpg",
+    "/images/gf/DSC01091.jpg", "/images/gf/DSC01094.jpg", "/images/gf/DSC01097.jpg",
+    "/images/gf/DSC01106.jpg", "/images/gf/DSC01109.jpg", "/images/gf/DSC01110.jpg",
+    "/images/gf/DSC01113.jpg", "/images/gf/DSC01119.jpg", "/images/gf/DSC01122.jpg",
 ];
 
 const features = [
@@ -166,13 +166,8 @@ export default function PropertyDetailFF() {
                         <div className="mb-10 pb-10 border-b border-[#0F172A]/10">
                             <h2 className="font-serif text-2xl text-[#0F172A] mb-5">About This Space</h2>
                             <div className="space-y-4 text-[#0F172A]/75 font-light leading-relaxed">
-                                <p>Bright, stylish London retreat just moments from the Tube. Unpack, relax and explore the city with ease.</p>
-                                <ul className="space-y-2 pl-4">
-                                    {["Comfortable beds with crisp linens", "Fast Wi-Fi & dedicated workspace", "Fully equipped kitchen for easy meals", "Sparkling clean bathroom & fresh towels"].map((item, i) => (
-                                        <li key={i} className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-[#C5A087] shrink-0" strokeWidth={1.5} />{item}</li>
-                                    ))}
-                                </ul>
-                                <p>Book your hassle-free stay today and feel at home in the heart of London!</p>
+                                <p>Stylish and sun-drenched 3-bedroom retreat just moments from the Tube. Unpack, relax, and explore London from a comfortable home base designed for families and professionals.</p>
+                                <p>Book direct to save on fees and guarantee the best rates available. Enjoy exclusive use of the entire apartment with premium Wi-Fi and modern amenities.</p>
                             </div>
                         </div>
 
@@ -307,7 +302,7 @@ export default function PropertyDetailFF() {
                                             <label className="block text-[#0F172A]/60 text-xs uppercase tracking-widest mb-1.5 font-medium">Message</label>
                                             <textarea name="message" value={formData.message} onChange={handleChange} rows={3} placeholder="Any questions or special requests?" className="w-full border border-[#0F172A]/20 px-3 py-2.5 text-sm text-[#0F172A] placeholder:text-[#0F172A]/30 focus:outline-none focus:border-[#C5A087] bg-transparent resize-none" />
                                         </div>
-                                        <button type="submit" className="w-full bg-[#0F172A] text-[#F9F8F6] py-4 text-xs uppercase tracking-[0.2em] font-bold hover:bg-[#C5A087] transition-colors duration-300">
+                                        <button type="submit" className="w-full bg-[#0F172A] text-[#F9F8F6] py-5 text-sm uppercase tracking-[0.2em] font-bold hover:bg-[#C5A087] transition-all duration-300 transform hover:scale-[1.02] shadow-lg">
                                             Send Enquiry
                                         </button>
                                     </form>

@@ -37,7 +37,7 @@ export default function Membership() {
                         Join the <br /> Cogan&apos;s Circle
                     </h2>
                     <p className="text-[#0F172A] text-sm md:text-base tracking-wide">
-                        We reserve the best rates for our friends, naturally
+                        The best rates are reserved for our direct guests.
                     </p>
                 </div>
 

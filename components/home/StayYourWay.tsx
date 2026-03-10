@@ -12,8 +12,8 @@ export default function StayYourWay() {
                     <h2 className="font-serif text-5xl md:text-6xl text-[#0F172A] mb-6">
                         Stay Your Way
                     </h2>
-                    <p className="text-[#0F172A]/80 max-w-xl mx-auto text-lg">
-                        Whether you&apos;re here to close a deal or open a bottle of wine, our spaces sustain your lifestyle.
+                    <p className="text-[#0F172A]/80 max-w-lg mx-auto text-lg">
+                        Tailored spaces for modern living. Whether for business or leisure, find your perfect London home.
                     </p>
                 </div>
 
@@ -24,7 +24,7 @@ export default function StayYourWay() {
                             <Briefcase className="w-12 h-12 mb-6 opacity-90" strokeWidth={1} />
                             <h3 className="font-serif text-3xl mb-4">For Business</h3>
                             <p className="opacity-80 mb-8 leading-relaxed">
-                                Superfast Wi-Fi, dedicated workspaces, and Nespresso machines to fuel your productivity. Central locations put you minutes from the City.
+                                High-speed Wi-Fi, dedicated workspaces, and prime locations for seamless productivity.
                             </p>
                             <Button variant="outline" className="border-[#F9F8F6] text-[#F9F8F6] hover:bg-[#F9F8F6] hover:text-[#0F172A] uppercase tracking-widest text-xs h-12 px-8">
                                 Corporate Rates
@@ -40,7 +40,7 @@ export default function StayYourWay() {
                             <Coffee className="w-12 h-12 mb-6 text-[#0F172A] opacity-90" strokeWidth={1} />
                             <h3 className="font-serif text-3xl mb-4 text-[#0F172A]">For Leisure</h3>
                             <p className="text-[#0F172A]/80 mb-8 leading-relaxed">
-                                Fully equipped kitchens, luxury toiletries, and space to breathe. Experience London like a local in our curated neighborhood homes.
+                                Luxury toiletries, fully equipped kitchens, and the comfort of a private neighborhood home.
                             </p>
                             <Button className="bg-[#0F172A] text-[#F9F8F6] hover:bg-[#0F172A]/90 uppercase tracking-widest text-xs h-12 px-8">
                                 Explore Locations

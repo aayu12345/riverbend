@@ -26,8 +26,8 @@ export default function Hero() {
                         Elegance
                     </h1>
 
-                    <p className="text-[#0F172A]/80 text-lg md:text-xl font-sans max-w-md mb-8 leading-relaxed">
-                        Experience the charm of London living in our exclusive collection of Kensington and Notting Hill residences.
+                    <p className="text-[#0F172A]/80 text-lg md:text-xl font-sans max-w-sm mb-8 leading-relaxed">
+                        Discover the elegance of London living. Book direct for our best rates and exclusive amenities.
                     </p>
 
                     <Link href="/properties">

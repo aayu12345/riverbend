@@ -20,20 +20,20 @@ const properties: {
             id: "shepherds-bush-4br",
             title: "Shepherd's Bush 4BR Flat · Sleeps 8",
             location: "Shepherd's Bush, London",
-            price: "Contact for pricing",
-            description: "Spacious 4-bedroom apartment near Westfield. Perfect for families and groups. Bright, modern, with excellent transport links to Central London.",
+            price: "Best Rates Guaranteed",
+            description: "Spacious 4-bedroom home steps from Westfield. Ideal for large families and groups seeking a premium London stay.",
             stats: { guests: 8, bedrooms: 4, baths: 2 },
-            image: "/images/gf/DSC01022.jpg",
+            image: "/images/ff/DSC01226.jpg",
             link: "/properties/shepherds-bush-4br"
         },
         {
             id: "london-3br",
             title: "Luxury London 3BR Flat Near Tube",
             location: "Shepherd's Bush, London",
-            price: "Contact for pricing",
-            description: "Bright, stylish London retreat just moments from the Tube. Comfortable beds, fast Wi-Fi, fully equipped kitchen and excellent transport links.",
+            price: "Book Direct & Save",
+            description: "Bright, stylish retreat moments from the Tube. Perfect for families looking for comfort and convenience in West London.",
             stats: { guests: 6, bedrooms: 3, baths: 1 },
-            image: "/images/ff/DSC01133.jpg",
+            image: "/images/gf/DSC01125.jpg",
             link: "/properties/london-3br"
         }
     ];
@@ -113,7 +113,7 @@ export default function Properties() {
                                 </div>
 
                                 <Link href={property.link} className="inline-flex items-center text-xs font-bold uppercase tracking-widest text-charcoal hover:text-copper transition-colors gap-2">
-                                    View Details <ArrowUpRight className="w-3 h-3" />
+                                    Book Direct <ArrowUpRight className="w-3 h-3" />
                                 </Link>
                             </div>
                         </motion.div>

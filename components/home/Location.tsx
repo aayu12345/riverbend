@@ -5,23 +5,23 @@ import { ShoppingBag, Train, Home, Clock } from "lucide-react";
 
 const reasons = [
     {
-        title: "World-Class Shopping and Dining (2 Minutes Away)",
-        desc: "Westfield London is one of Europe’s largest shopping centres, offering over 300 high-street and luxury brands, a wide selection of restaurants and cafés, cinemas, gyms, and entertainment options — all just a short walk away.",
+        title: "Shopping & Dining",
+        desc: "Westfield London is Europe’s landmark shopping destination, with 300+ brands and hundreds of dining options — just a short walk away.",
         icon: ShoppingBag
     },
     {
-        title: "Excellent Transport Links",
-        desc: "Shepherd’s Bush is a major transport hub with access to the Central Line, London Overground, National Rail services, and multiple bus routes. Central London locations such as Oxford Circus and the West End are quick and easy to reach.",
+        title: "Prime Connectivity",
+        desc: "A major transport hub with direct access to the Central Line, Overground, and National Rail. Reach the West End in minutes.",
         icon: Train
     },
     {
-        title: "Central Yet Residential",
-        desc: "The area combines the energy of central London with the comfort of a residential neighbourhood. It is lively, well-lit, and safe, with local cafés, pubs, and green spaces close by.",
+        title: "Local Character",
+        desc: "Combines the energy of central London with the charm of a residential neighbourhood. Safe, vibrant, and perfectly located.",
         icon: Home
     },
     {
-        title: "Ideal for Short and Long Stays",
-        desc: "Whether visiting for shopping, work, events, or sightseeing, staying just two minutes from Westfield London offers unmatched convenience, saving time and making your stay stress-free.",
+        title: "Unmatched Convenience",
+        desc: "Staying 2 minutes from Westfield saves you time and makes your London stay entirely stress-free and enjoyable.",
         icon: Clock
     }
 ];

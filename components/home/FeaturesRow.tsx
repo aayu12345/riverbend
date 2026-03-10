@@ -6,23 +6,23 @@ import { Trophy, RefreshCw, Bell, Moon } from "lucide-react";
 const features = [
     {
         icon: Trophy,
-        title: "How wonderful",
-        description: "We delight our members with 10% off all stays"
+        title: "Best Rates",
+        description: "Save 10% on all stays when you book direct with us"
     },
     {
         icon: RefreshCw,
-        title: "Forever flexible",
-        description: "Enjoy flexible booking and free cancellation options"
+        title: "Flexible Stay",
+        description: "Enjoy flexible booking and hassle-free cancellation"
     },
     {
         icon: Bell,
-        title: "At your service",
-        description: "Our reception team are on hand to make your wish a reality"
+        title: "Concierge",
+        description: "Our team is on hand to assist with your every need"
     },
     {
         icon: Moon,
-        title: "Stay longer",
-        description: "Relish 20% off stays over 7 nights"
+        title: "Longer Stays",
+        description: "Special 20% discount on stays over 7 nights"
     }
 ];
 

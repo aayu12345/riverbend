@@ -5,33 +5,33 @@ import { ShoppingBag, Map, Music, TreePine, UtensilsCrossed, TrainFront } from "
 
 const activities = [
     {
-        title: "Shopping and Entertainment",
-        desc: "Westfield London, one of Europe’s largest shopping centres, with hundreds of shops, restaurants, cafés, cinemas, and leisure options. Unique experiences and entertainment venues within walking distance.",
+        title: "Shopping & Cinema",
+        desc: "Westfield London offers world-class shopping, diverse dining, and luxury cinema experiences right on your doorstep.",
         icon: ShoppingBag
     },
     {
-        title: "Markets and Local Culture",
-        desc: "Shepherd’s Bush Market, a historic street market offering international food, fresh produce, and local shopping. A vibrant neighbourhood with independent shops and cafés.",
+        title: "Local Markets",
+        desc: "Shepherd’s Bush Market is a historic hub for international street food, fresh produce, and independent local shopping.",
         icon: Map
     },
     {
-        title: "Live Music and Events",
-        desc: "O2 Shepherd’s Bush Empire, a well-known venue hosting concerts and live events. Bush Hall, a popular space for live music and performances.",
+        title: "Music & Culture",
+        desc: "Catch world-class acts at the O2 Shepherd’s Bush Empire or contemporary theatre productions at the nearby Bush Theatre.",
         icon: Music
     },
     {
-        title: "Outdoor Spaces",
-        desc: "Shepherd’s Bush Green, ideal for relaxing, walking, or enjoying the local atmosphere. Nearby parks and green spaces for quiet breaks from the city.",
+        title: "Green Spaces",
+        desc: "Enjoy the open space of Shepherd’s Bush Green, perfect for a morning run or a relaxing coffee break from the city heat.",
         icon: TreePine
     },
     {
-        title: "Food and Nightlife",
-        desc: "A wide variety of restaurants, street food, pubs, and bars catering to all tastes. Lively evenings with plenty of dining and social options close by.",
+        title: "Dining & Nightlife",
+        desc: "From traditional English pubs to international street food, the area is packed with vibrant social and dining options.",
         icon: UtensilsCrossed
     },
     {
-        title: "Easy Access to Central London",
-        desc: "Excellent transport connections making it easy to reach major attractions, business districts, and sightseeing spots across London.",
+        title: "Fast City Access",
+        desc: "Outstanding transport links mean you can reach Oxford Circus, Notting Hill, and the West End in a matter of minutes.",
         icon: TrainFront
     }
 ];
