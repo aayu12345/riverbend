@@ -34,19 +34,20 @@ export default function Navbar() {
 
     return (
         <header
-            className="fixed top-0 left-0 right-0 z-50 bg-[#F9F8F6] py-4 md:py-6 border-b border-[#0F172A]/10 shadow-sm"
+            className="fixed top-0 left-0 right-0 z-50 bg-[#F9F8F6] py-6 border-b border-[#0F172A]/10 shadow-sm"
         >
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 flex justify-between items-center h-full overflow-visible relative" style={{ pointerEvents: 'auto' }}>
-                {/* Logo */}
-                <Link href="/" className="flex items-center cursor-pointer flex-shrink-0 relative z-50 -ml-2 sm:ml-0">
-                    <div className="relative h-12 sm:h-14 md:h-16 w-[180px] sm:w-[240px] md:w-[260px]">
+                {/* Logo - Text/Image Hybrid with Scale */}
+                <Link href="/" className="flex items-center cursor-pointer flex-shrink-0 overflow-visible -ml-4 sm:-ml-6 md:-ml-8 relative z-50">
+                    <div className="relative h-7 sm:h-9 w-[160px] sm:w-[280px] md:w-[350px] overflow-visible">
                         <Image
                             src="/images/cogansplacelogo.png"
                             alt="Cogan's Place"
                             fill
                             priority
-                            className="object-contain object-left drop-shadow-sm"
-                            sizes="(max-width: 640px) 180px, (max-width: 768px) 240px, 260px"
+                            className="object-contain object-left mt-2 transition-all duration-300 drop-shadow-sm"
+                            style={{ transform: "scale(4.5)", transformOrigin: "left center" }}
+                            sizes="(max-width: 640px) 160px, (max-width: 768px) 280px, 350px"
                         />
                     </div>
                 </Link>
