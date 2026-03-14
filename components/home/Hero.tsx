@@ -41,7 +41,7 @@ export default function Hero() {
             {/* Right Image */}
             <div className="w-full md:w-1/2 relative h-[50vh] md:h-auto min-h-screen">
                 <Image
-                    src="/images/hero_london_victorian.png"
+                    src="/images/hero_brick_exterior.jpg"
                     alt="Victorian London Townhouse"
                     fill
                     className="object-cover"

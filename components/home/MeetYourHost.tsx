@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function MeetYourHost() {
     return (
@@ -8,19 +9,20 @@ export default function MeetYourHost() {
             <div className="container mx-auto px-4 md:px-8">
                 <div className="flex flex-col md:flex-row items-center gap-12 lg:gap-24 max-w-6xl mx-auto">
 
-                    {/* Image Column — replace the div below with an <Image> when Steve's photo is ready */}
+                    {/* Image Column */}
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
-                        className="w-full md:w-5/12 relative aspect-[3/4] rounded-sm overflow-hidden bg-charcoal/5 flex flex-col items-center justify-center gap-6"
+                        className="w-full md:w-5/12 relative aspect-[3/4] rounded-sm overflow-hidden"
                     >
-                        {/* Elegant initials placeholder until Steve's real photo is provided */}
-                        <div className="w-36 h-36 rounded-full border-2 border-charcoal/20 bg-charcoal/10 flex items-center justify-center">
-                            <span className="font-serif text-6xl text-charcoal/40 italic select-none">SC</span>
-                        </div>
-                        <p className="text-charcoal/35 text-xs uppercase tracking-[0.25em] font-medium">Photo Coming Soon</p>
+                        <Image
+                            src="/images/steve_cogan.jpg"
+                            alt="Steve Cogan"
+                            fill
+                            className="object-cover"
+                        />
                     </motion.div>
 
                     {/* Content Column */}

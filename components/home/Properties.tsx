@@ -23,7 +23,7 @@ const properties: {
             price: "Best Rates Guaranteed",
             description: "Spacious 4-bedroom home steps from Westfield. Ideal for large families and groups seeking a premium London stay.",
             stats: { guests: 8, bedrooms: 4, baths: 2 },
-            image: "/images/ff/DSC01226.jpg",
+            image: "/images/ff/DSC01169.jpg",
             link: "/properties/shepherds-bush-4br"
         },
         {
@@ -33,7 +33,7 @@ const properties: {
             price: "Book Direct & Save",
             description: "Bright, stylish retreat moments from the Tube. Perfect for families looking for comfort and convenience in West London.",
             stats: { guests: 6, bedrooms: 3, baths: 1 },
-            image: "/images/gf/DSC01125.jpg",
+            image: "/images/gf/DSC01043.jpg",
             link: "/properties/london-3br"
         }
     ];
