@@ -8,7 +8,7 @@ export default function Footer() {
     return (
         <footer className="bg-[#0F172A] text-[#F9F8F6] pt-20 pb-10 text-sm">
             <div className="container mx-auto px-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20 border-b border-[#F9F8F6]/10 pb-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20 border-b border-[#F9F8F6]/10 pb-12">
                     {/* Contact & Service Column */}
                     <div className="space-y-6">
                         <h3 className="font-serif italic text-lg mb-4">Contact Us</h3>
@@ -22,29 +22,6 @@ export default function Footer() {
                             <Link href="#" className="hover:text-white transition-colors">Offers</Link>
                             <Link href="#" className="hover:text-white transition-colors">Locations</Link>
                             <Link href="#" className="hover:text-white transition-colors">Long Stays</Link>
-                        </nav>
-                    </div>
-
-                    {/* Company Column */}
-                    <div className="space-y-6">
-                        <h3 className="font-serif italic text-lg mb-4">Our Company</h3>
-                        <nav className="flex flex-col gap-3 opacity-80">
-                            <Link href="#" className="hover:text-white transition-colors">About</Link>
-                            <Link href="#" className="hover:text-white transition-colors">Sustainability</Link>
-                            <Link href="#" className="hover:text-white transition-colors">Press & Media</Link>
-                            <Link href="#" className="hover:text-white transition-colors">Careers</Link>
-                            <Link href="#" className="hover:text-white transition-colors">Development</Link>
-                        </nav>
-                    </div>
-
-                    {/* Partners Column */}
-                    <div className="space-y-6">
-                        <h3 className="font-serif italic text-lg mb-4">Partner Services</h3>
-                        <nav className="flex flex-col gap-3 opacity-80">
-                            <Link href="#" className="hover:text-white transition-colors">Car Hire</Link>
-                            <Link href="#" className="hover:text-white transition-colors">Airport Transfer</Link>
-                            <Link href="#" className="hover:text-white transition-colors">Events & Activities</Link>
-                            <Link href="#" className="hover:text-white transition-colors">Upgrade Your Stay</Link>
                         </nav>
                     </div>
 

@@ -33,7 +33,7 @@ const properties: {
             price: "Book Direct & Save",
             description: "Bright, stylish retreat moments from the Tube. Perfect for families looking for comfort and convenience in West London.",
             stats: { guests: 6, bedrooms: 3, baths: 1 },
-            image: "/images/gf/DSC01043.jpg",
+            image: "/images/slider/2.jpg",
             link: "/properties/london-3br"
         }
     ];

@@ -1,11 +1,31 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 
+const heroImages = [
+    "/images/hero_brick_exterior.jpg",
+    "/images/slider/1.jpg",
+    "/images/slider/2.jpg",
+    "/images/slider/3.jpg",
+    "/images/slider/4.jpg",
+    "/images/slider/5.jpg"
+];
+
 export default function Hero() {
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
+        }, 6000); // Change image every 6 seconds
+
+        return () => clearInterval(timer);
+    }, []);
+
     return (
         <section className="relative min-h-screen flex flex-col md:flex-row pt-28 overflow-hidden bg-[#F9F8F6]">
             {/* Left Content */}
@@ -38,15 +58,49 @@ export default function Hero() {
                 </motion.div>
             </div>
 
-            {/* Right Image */}
-            <div className="w-full md:w-1/2 relative h-[50vh] md:h-auto min-h-screen">
-                <Image
-                    src="/images/hero_brick_exterior.jpg"
-                    alt="Victorian London Townhouse"
-                    fill
-                    className="object-cover"
-                    priority
-                />
+            {/* Right Image Slideshow */}
+            <div className="w-full md:w-1/2 relative h-[50vh] md:h-[100vh] min-h-screen bg-[#0F172A] overflow-hidden">
+                <AnimatePresence initial={false}>
+                    <motion.div
+                        key={currentIndex}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 1.5, ease: "easeInOut" }}
+                        className="absolute inset-0 z-0"
+                    >
+                        <motion.div
+                            initial={{ scale: 1 }}
+                            animate={{ scale: 1.1 }}
+                            transition={{ duration: 8, ease: "linear" }}
+                            className="absolute inset-0"
+                        >
+                            <Image
+                                src={heroImages[currentIndex]}
+                                alt={`Victorian London Townhouse - View ${currentIndex + 1}`}
+                                fill
+                                className="object-cover"
+                                priority={currentIndex === 0}
+                            />
+                        </motion.div>
+                    </motion.div>
+                </AnimatePresence>
+
+                {/* Navigation Dots */}
+                <div className="absolute bottom-10 left-0 right-0 z-10 flex justify-center gap-3">
+                    {heroImages.map((_, index) => (
+                        <button
+                            key={index}
+                            onClick={() => setCurrentIndex(index)}
+                            className={`h-2 rounded-full transition-all duration-500 ${
+                                index === currentIndex
+                                    ? "bg-white w-8"
+                                    : "bg-white/50 hover:bg-white/80 w-2"
+                            }`}
+                            aria-label={`Go to slide ${index + 1}`}
+                        />
+                    ))}
+                </div>
             </div>
         </section>
     );
