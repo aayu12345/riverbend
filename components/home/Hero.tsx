@@ -7,12 +7,12 @@ import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 
 const heroImages = [
-    "/images/hero_brick_exterior.jpg",
     "/images/slider/1.jpg",
     "/images/slider/2.jpg",
     "/images/slider/3.jpg",
     "/images/slider/4.jpg",
-    "/images/slider/5.jpg"
+    "/images/slider/5.jpg",
+    "/images/slider/6.png"
 ];
 
 export default function Hero() {
@@ -21,7 +21,7 @@ export default function Hero() {
     useEffect(() => {
         const timer = setInterval(() => {
             setCurrentIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
-        }, 6000); // Change image every 6 seconds
+        }, 3500); // Change image every 3.5 seconds
 
         return () => clearInterval(timer);
     }, []);
@@ -66,13 +66,13 @@ export default function Hero() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        transition={{ duration: 1.5, ease: "easeInOut" }}
+                        transition={{ duration: 0.8, ease: "easeInOut" }}
                         className="absolute inset-0 z-0"
                     >
                         <motion.div
                             initial={{ scale: 1 }}
                             animate={{ scale: 1.1 }}
-                            transition={{ duration: 8, ease: "linear" }}
+                            transition={{ duration: 4.5, ease: "linear" }}
                             className="absolute inset-0"
                         >
                             <Image
