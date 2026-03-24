@@ -12,21 +12,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
-const allPhotos = [
-    "/images/ff/DSC01226.jpg", "/images/ff/DSC01130.jpg", "/images/ff/DSC01133.jpg",
-    "/images/ff/DSC01136.jpg", "/images/ff/DSC01139.jpg", "/images/ff/DSC01142.jpg",
-    "/images/ff/DSC01145.jpg", "/images/ff/DSC01148.jpg", "/images/ff/DSC01151.jpg",
-    "/images/ff/DSC01154.jpg", "/images/ff/DSC01157.jpg", "/images/ff/DSC01160.jpg",
-    "/images/ff/DSC01163.jpg", "/images/ff/DSC01169.jpg", "/images/ff/DSC01172.jpg",
-    "/images/ff/DSC01175.jpg", "/images/ff/DSC01178.jpg", "/images/ff/DSC01181.jpg",
-    "/images/ff/DSC01184.jpg", "/images/ff/DSC01187.jpg", "/images/ff/DSC01190.jpg",
-    "/images/ff/DSC01193.jpg", "/images/ff/DSC01196.jpg", "/images/ff/DSC01199.jpg",
-    "/images/ff/DSC01202.jpg", "/images/ff/DSC01205.jpg", "/images/ff/DSC01208.jpg",
-    "/images/ff/DSC01211.jpg", "/images/ff/DSC01214.jpg", "/images/ff/DSC01217.jpg",
-    "/images/ff/DSC01220.jpg", "/images/ff/DSC01223.jpg", "/images/ff/DSC01229.jpg",
-    "/images/ff/DSC01232.jpg", "/images/ff/DSC01235.jpg", "/images/ff/DSC01238.jpg",
-    "/images/ff/DSC01239.jpg",
-];
+const allPhotos = Array.from({ length: 39 }, (_, i) => `/images/ff/${i + 1}.jpg`);
 
 const features = [
     { icon: Bed, title: "Comfortable Bedrooms", desc: "Premium high thread count fresh white linen for a restful night after a long day of sightseeing." },
