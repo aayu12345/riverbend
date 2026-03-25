@@ -23,7 +23,7 @@ const properties: {
             price: "Best Rates Guaranteed",
             description: "Spacious 4-bedroom home steps from Westfield. Ideal for large families and groups seeking a premium London stay.",
             stats: { guests: 8, bedrooms: 4, baths: 2 },
-            image: "/images/ff/DSC01169.jpg",
+            image: "/images/ff/1.jpg",
             link: "/properties/shepherds-bush-4br"
         },
         {
