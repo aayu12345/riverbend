@@ -16,13 +16,6 @@ export default function Footer() {
                             <p>+44 7939 200486</p>
                             <p>stevecogan5@gmail.com</p>
                         </div>
-                        <h3 className="font-serif italic text-lg mb-4">Service</h3>
-                        <nav className="flex flex-col gap-3 opacity-80">
-                            <Link href="#" className="hover:text-white transition-colors">FAQ</Link>
-                            <Link href="#" className="hover:text-white transition-colors">Offers</Link>
-                            <Link href="#" className="hover:text-white transition-colors">Locations</Link>
-                            <Link href="#" className="hover:text-white transition-colors">Long Stays</Link>
-                        </nav>
                     </div>
 
                     {/* Newsletter Column */}
@@ -54,12 +47,6 @@ export default function Footer() {
                 <div className="flex flex-col md:flex-row justify-between items-center gap-6 opacity-60 text-xs tracking-wide">
                     <div className="flex gap-4">
                         <span>© {new Date().getFullYear()} Cogan&apos;s Place</span>
-                        <span className="hidden md:inline">|</span>
-                        <Link href="#" className="hover:text-white">Privacy Policy</Link>
-                        <Link href="#" className="hover:text-white">Terms & Conditions</Link>
-                    </div>
-                    <div>
-                        <p>Part of the Staycity Group</p>
                     </div>
                 </div>
             </div>
