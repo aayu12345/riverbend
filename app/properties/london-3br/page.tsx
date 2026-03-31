@@ -228,7 +228,7 @@ export default function PropertyDetailFF() {
                         </div>
 
                         {/* Local Attractions */}
-                        <div>
+                        <div className="mb-10 pb-10 border-b border-[#0F172A]/10">
                             <h2 className="font-serif text-2xl text-[#0F172A] mb-6">Local Attractions & Guest Access</h2>
                             <div className="space-y-6 text-[#0F172A]/75 font-light leading-relaxed">
                                 <div className="flex gap-4">
@@ -252,6 +252,17 @@ export default function PropertyDetailFF() {
                                         Central Line, London Overground & National Rail from Shepherd's Bush. Easy access to Oxford Circus, West End, and Heathrow.
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+
+                        {/* House Rules */}
+                        <div className="mb-10">
+                            <h2 className="font-serif text-2xl text-[#0F172A] mb-5">House Rules</h2>
+                            <div className="space-y-4 text-[#0F172A]/75 font-light leading-relaxed bg-white p-6 md:p-8 rounded-xl border border-[#0F172A]/5 shadow-sm">
+                                <p>Please look after my lovely flat as if it is your own as I have designed it with a lot of care and attention.</p>
+                                <p>Please be considerate in the late evening as this is a residential area and I live on the ground floor. Please keep noise to a minimum after 11pm.</p>
+                                <p>Standard check-in time is 4pm onwards, and check-out time is before 11am. If you require check in/out outside standard times please get in touch and we will do our best to accommodate you subject to other guest checkin/out.</p>
+                                <p>No parties will be tolerated. Please turn off all lights and lock all the doors when you leave. If you have any questions please message host Steve. Thank you.</p>
                             </div>
                         </div>
                     </div>
