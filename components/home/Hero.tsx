@@ -7,12 +7,11 @@ import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 
 const heroImages = [
-    "/images/slider/1.jpg",
-    "/images/slider/2.jpg",
-    "/images/slider/3.jpg",
-    "/images/slider/4.jpg",
-    "/images/slider/5.jpg",
-    "/images/slider/6.png"
+    "/images/gf/DSC01034.jpg",
+    "/images/gf/DSC01046.jpg",
+    "/images/gf/DSC01119.jpg",
+    "/images/ff/38.jpg",
+    "/images/ff/33.jpg"
 ];
 
 export default function Hero() {
@@ -59,7 +58,7 @@ export default function Hero() {
             </div>
 
             {/* Right Image Slideshow */}
-            <div className="w-full md:w-1/2 relative h-[50vh] md:h-[100vh] min-h-screen bg-[#0F172A] overflow-hidden">
+            <div className="w-full md:w-1/2 relative h-[60vh] md:h-screen bg-[#0F172A] overflow-hidden">
                 <AnimatePresence initial={false}>
                     <motion.div
                         key={currentIndex}
